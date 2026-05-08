@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -38,8 +38,32 @@ entity controller_fsm is
 end controller_fsm;
 
 architecture FSM of controller_fsm is
+    signal f_Q  : std_logic_vector(3 downto 0) := "0001";
+    signal f_Q_next : std_logic_vector(3 downto 0);
 
 begin
-
-
+    process(i_adv,i_reset)
+    begin
+        if i_reset = '1' then
+            f_Q <= "0001";
+        elsif rising_edge(i_adv) then
+            f_Q <= f_Q_next;
+        end if;
+    end process;
+    process(f_Q)
+    begin
+        case f_Q is
+            when "0001" =>
+                f_Q_next <= "0010";
+            when "0010" =>
+                f_Q_next <= "0100";
+            when "0100" =>
+                f_Q_next <= "1000";
+            when "1000" =>
+                f_Q_next <= "0001";
+            when others =>
+                f_Q_next <= "0001";
+        end case;
+    end process;
+    o_cycle <= f_Q;
 end FSM;
