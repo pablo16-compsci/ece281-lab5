@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sat Apr 25 20:58:31 2026
+# Process ID: 14552
+# Current directory: C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6780 C:\Users\C28Pablo.Ramirez\Documents\ece281-lab5\basic_cpu.xpr
+# Log file: C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5/vivado.log
+# Journal file: C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5\vivado.jou
+# Running On        :C28-2TK41600XL
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :AMD Ryzen 7 PRO 7840U w/ Radeon 780M Graphics  
+# CPU Frequency     :3294 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :33585 MB
+# Swap memory       :5100 MB
+# Total Virtual     :38685 MB
+# Available Virtual :15164 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5/basic.xpr
+update_compile_order -fileset sources_1
+close_project
+create_project basic_cpu . -part xc7a35tcpg236-1
+set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
+add_files -norecurse {C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5/src/ALU.vhd C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5/src/TDM4.vhd C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5/src/top_basys3.vhd C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5/src/clock_divider.vhd C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5/src/controller_fsm.vhd C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5/src/twoscomp_decimal.vhd}
+add_files -fileset sim_1 -norecurse {C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5/src/clock_divider_tb.vhd C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5/src/twoscomp_decimal_tb.vhd C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5/src/ALU_tb.vhd}
+add_files -fileset constrs_1 -norecurse C:/Users/C28Pablo.Ramirez/Documents/ece281-lab5/src/Basys3_Master.xdc
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
